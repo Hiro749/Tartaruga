@@ -1,0 +1,40 @@
+ET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+CREATE TABLE `banco_de_dados_cliente_planta` (
+  `id_planta_cliente` int(11) NOT NULL,
+  `id_cliente` int(11) NOT NULL,
+  `id_planta` int(11) NOT NULL,
+  `apelido` varchar(100) NOT NULL,
+  `data_cadastro` datetime NOT NULL,
+  `observacoes` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+ALTER TABLE `banco_de_dados_cliente_planta`
+ ADD CONSTRAINT\ `fk_planta`
+  FOREIGN KEY (`id_planta`)
+ REFERENCES \ planta (2)` (`id_planta`);
+--
+-- AUTO_INCREMENT para tabelas despejadas
+--
+
+--
+-- AUTO_INCREMENT de tabela `banco_de_dados_cliente_planta`
+--
+ALTER TABLE `banco_de_dados_cliente_planta`
+  MODIFY `id_planta_cliente` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;D PRIMARY KEY (`id_planta_cliente`),
+  ADD KEY `id_cliente` (`id_cliente`),
+  ADD KEY `id_planta` (`id_planta`);
+
+ALTER TABLE `banco_de_dados_cliente_planta`
+ ADD CONSTRAINT `fk_cliente`
+ FOREIGN KEY (`id_cliente`)
+ REFERENCES `cliente` (`id_cliente`),
+
+ ADD S
